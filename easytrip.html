@@ -12,7 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=11">
     <style>
         /* EasyTrip Specific Styles */
         .easytrip-hero {
@@ -100,15 +100,81 @@
 
         @media (max-width: 968px) {
 
+            .easytrip-hero {
+                height: 100vh;
+                min-height: 500px;
+            }
+
             .showcase-row,
             .showcase-row.reverse {
                 flex-direction: column;
                 text-align: center;
                 gap: 40px;
+                margin-bottom: 80px;
+            }
+
+            .showcase-text h3 {
+                font-size: 32px;
+            }
+
+            .showcase-text p {
+                font-size: 16px;
             }
 
             .et-title {
                 font-size: 48px;
+            }
+
+            .et-slogan {
+                font-size: 18px;
+                padding: 0 20px;
+            }
+
+            .pixel-mockup-large {
+                width: 240px;
+                height: 480px;
+                margin: 0 auto;
+            }
+
+            .showcase-visual {
+                display: flex;
+                justify-content: center;
+            }
+
+            .feature-showcase {
+                padding: 60px 0;
+            }
+
+            .easytrip-hero .scroll-indicator {
+                position: absolute;
+                bottom: 40px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                width: fit-content;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .et-title {
+                font-size: 36px;
+            }
+
+            .et-slogan {
+                font-size: 16px;
+            }
+
+            .showcase-text h3 {
+                font-size: 26px;
+            }
+
+            .showcase-text p {
+                font-size: 14px;
+            }
+
+            .pixel-mockup-large {
+                width: 200px;
+                height: 400px;
             }
         }
     </style>
