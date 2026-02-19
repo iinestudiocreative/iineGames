@@ -12,7 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=8">
 </head>
 
 <body>
@@ -64,9 +64,9 @@
         </div>
 
         <nav class="menu-content">
-            <a href="index.html" class="menu-link">ACCUEIL</a>
-            <a href="index.html#portfolio" class="menu-link">JEUX & APPS</a>
-            <a href="https://iinestudio.com" target="_blank" class="menu-link">IINESTUDIO</a>
+            <a href="index.html" class="menu-link" data-i18n="nav.home">ACCUEIL</a>
+            <a href="index.html#portfolio" class="menu-link" data-i18n="nav.gamesApps">JEUX &amp; APPS</a>
+            <a href="https://iinestudio.com" target="_blank" class="menu-link" data-i18n="nav.studio">IINESTUDIO</a>
         </nav>
     </div>
 
@@ -74,12 +74,14 @@
         <!-- Hero Section -->
         <section id="hero" class="full-screen">
             <div class="hero-content">
-                <h1 class="fade-in">Crée avec Passion. <br><span class="highlight">Jouer avec Style.</span></h1>
-                <p class="fade-in delay-1">iineGames réinvente l'expérience mobile avec des applications intelligentes
+                <h1 class="fade-in" data-i18n-html="hero.title">Crée avec Passion. <br><span class="highlight">Jouer
+                        avec Style.</span></h1>
+                <p class="fade-in delay-1" data-i18n="hero.subtitle">iineGames réinvente l'expérience mobile avec des
+                    applications intelligentes
                     et des jeux addictifs.</p>
                 <div class="scroll-indicator fade-in delay-2">
                     <div class="mouse"></div>
-                    <span>Scroll</span>
+                    <span data-i18n="hero.scroll">Scroll</span>
                 </div>
             </div>
             <div class="hero-bg-accent"></div>
@@ -97,10 +99,15 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 iineGames / iineStudio. Tous droits réservés.</p>
+            <p data-i18n="footer.rights">&copy; 2026 iineGames / iineStudio. Tous droits réservés.</p>
         </div>
     </footer>
 
+    <!-- i18next CDN -->
+    <script src="https://unpkg.com/i18next@23.16.8/i18next.min.js"></script>
+    <!-- i18n Configuration -->
+    <script src="i18n.js"></script>
+    <!-- Main App Script -->
     <script src="main.js"></script>
 </body>
 

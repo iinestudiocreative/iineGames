@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
+    // ─── Initialize i18n before anything else ───
+    await initI18n();
     const header = document.getElementById('header');
     const menuToggle = document.getElementById('menu-toggle');
     const menuClose = document.getElementById('menu-close');
@@ -25,14 +27,34 @@ document.addEventListener('DOMContentLoaded', async () => {
         link.addEventListener('click', closeMenu);
     });
 
-    // Language switch placeholder
+    // ─── Language Switch ───
     const langSwitch = document.getElementById('lang-switch');
     if (langSwitch) {
         langSwitch.addEventListener('click', () => {
-            // Future implementation for language switching
-            console.log('Language switch clicked');
+            const langs = getSupportedLanguages();
+            if (langs.length <= 1) {
+                console.log('[i18n] Only one language available');
+                return;
+            }
+            const currentIdx = langs.findIndex(l => l.code === getCurrentLanguage());
+            const nextIdx = (currentIdx + 1) % langs.length;
+            changeLanguage(langs[nextIdx].code);
         });
     }
+
+    // ─── Listen for language changes to re-render ───
+    document.addEventListener('languageChanged', async () => {
+        translateStaticElements();
+        // Re-render dynamic content with new translations
+        try {
+            const response = await fetch('data.json');
+            const data = await response.json();
+            renderPortfolio(data.apps);
+            renderStudio(data.studio);
+        } catch (error) {
+            console.error('Error reloading data on language change:', error);
+        }
+    });
 
     // Header scroll background
     window.addEventListener('scroll', () => {
@@ -43,7 +65,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    // Fetch data and render
+    // ─── Translate static HTML elements ───
+    translateStaticElements();
+
+    // ─── Fetch data and render ───
     try {
         const response = await fetch('data.json');
         const data = await response.json();
@@ -108,8 +133,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                             </div>
 
                             <div class="cta-buttons">
-                                <a href="${app.links.learnmore}" class="btn btn-primary">En savoir plus</a>
-                                <span class="stack-info">Stack: ${app.stack}</span>
+                                <a href="${app.links.learnmore}" class="btn btn-primary">${t('easytrip.learnMore')}</a>
                             </div>
                         </div>
                         <div class="game-media reveal">
@@ -132,7 +156,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                             </ul>
 
                             <div class="cta-buttons">
-                                <a href="${app.links.playstore}" class="btn btn-secondary" target="_blank">Jouer sur Android</a>
+                                <a href="${app.links.playstore}" class="btn btn-secondary" target="_blank">${t('snake360.playAndroid')}</a>
                             </div>
                         </div>
                         <div class="game-media reveal">
@@ -151,7 +175,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 showcase.className = 'showcase-section';
                 showcase.innerHTML = `
                     <div class="container">
-                        <h3 class="title-l text-center">Aperçu de l'Interface</h3>
+                        <h3 class="title-l text-center">${t('portfolio.interfacePreview')}</h3>
                         <div class="showcase-grid reveal">
                             ${app.snapshots.map(img => `
                                 <div class="pixel-mockup">
@@ -204,5 +228,29 @@ document.addEventListener('DOMContentLoaded', async () => {
         }, observerOptions);
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }
+
+    /**
+     * Traduit tous les éléments HTML statiques ayant l'attribut data-i18n.
+     * - data-i18n="key" → met à jour textContent
+     * - data-i18n-html="key" → met à jour innerHTML (pour le hero title avec <br>/<span>)
+     */
+    function translateStaticElements() {
+        // Text-only translations
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            el.textContent = t(key);
+        });
+
+        // HTML translations (hero title with <br> and <span>)
+        document.querySelectorAll('[data-i18n-html]').forEach(el => {
+            const key = el.getAttribute('data-i18n-html');
+            // For hero title, reconstruct with highlight span
+            if (key === 'hero.title') {
+                el.innerHTML = `${t('hero.title')} <br><span class="highlight">${t('hero.titleHighlight')}</span>`;
+            } else {
+                el.innerHTML = t(key);
+            }
+        });
     }
 });

@@ -10,22 +10,22 @@
             "type": "app",
             "features": [
                 {
-                    "icon": "🗺️",
+                    "icon": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polygon points='3 11 22 2 13 21 11 13 3 11'></polygon></svg>",
                     "title": "Itinéraire",
                     "desc": "Multi-étapes intelligent."
                 },
                 {
-                    "icon": "🌦️",
+                    "icon": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M17.5 19c0-3.037-2.463-5.5-5.5-5.5S6.5 15.963 6.5 19'></path><path d='M12 3v3'></path><path d='M12 21v-3'></path><path d='M3 12h3'></path><path d='M21 12h-3'></path><path d='M5.637 5.636l2.121 2.121'></path><path d='M18.364 18.364l-2.121-2.121'></path><path d='M5.636 18.364l2.121-2.121'></path><path d='M18.364 5.636l-2.121 2.121'></path></svg>",
                     "title": "Météo",
                     "desc": "Badges dynamiques pass."
                 },
                 {
-                    "icon": "⛽",
+                    "icon": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 3v18h18'/><path d='M18 17V9'/><path d='M13 17V5'/><path d='M8 17v-3'/></svg>",
                     "title": "Coûts",
                     "desc": "Carburant & Péages (ETC)."
                 },
                 {
-                    "icon": "💬",
+                    "icon": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'></path></svg>",
                     "title": "Social",
                     "desc": "Sync Discord & Cloud."
                 }
