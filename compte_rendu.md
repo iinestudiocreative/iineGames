@@ -40,5 +40,28 @@ Pour modifier le contenu du site :
 2. Modifiez les champs texte ou les chemins d'images.
 3. Enregistrez. Le site reflétera les changements automatiquement.
 
+
 ---
-*Projet réalisé par Antigravity pour iineGames - 16 Février 2026*
+
+## 🚀 Déploiement & Hébergement
+Le site est hébergé gratuitement via **GitHub Pages**.
+
+### Configuration Active
+- **URL Publique** : `https://iinegames.iinestudio.com`
+- **Dépôt GitHub** : `https://github.com/iinestudiocreative/iineGames`
+- **Branche de Déploiement** : `main`
+
+### Mise à Jour du Site
+Pour mettre à jour le site en ligne après une modification locale :
+1.  Faites vos modifications.
+2.  Ouvrez un terminal dans le dossier du projet.
+3.  Exécutez :
+    ```bash
+    git add .
+    git commit -m "Description de la mise à jour"
+    git push origin main
+    ```
+4.  Le site se mettra à jour automatiquement en quelques minutes.
+
+---
+*Projet réalisé par Antigravity pour iineGames - 20 Février 2026*
