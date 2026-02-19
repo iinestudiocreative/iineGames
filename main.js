@@ -27,6 +27,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         link.addEventListener('click', closeMenu);
     });
 
+    // Close menu when clicking outside (on the overlay)
+    fullscreenMenu.addEventListener('click', (e) => {
+        const rect = fullscreenMenu.getBoundingClientRect();
+        if (e.clientX < rect.left) {
+            closeMenu();
+        }
+    });
+
     // ─── Language Switch ───
     const langSwitch = document.getElementById('lang-switch');
     if (langSwitch) {
@@ -168,28 +176,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                 `;
             }
             portfolioContainer.appendChild(section);
-
-            // Add Snapshots Showcase for apps
-            if (app.snapshots) {
-                const showcase = document.createElement('section');
-                showcase.className = 'showcase-section';
-                showcase.innerHTML = `
-                    <div class="container">
-                        <h3 class="title-l text-center">${t('portfolio.interfacePreview')}</h3>
-                        <div class="showcase-grid reveal">
-                            ${app.snapshots.map(img => `
-                                <div class="pixel-mockup">
-                                    <div class="pixel-camera"></div>
-                                    <div class="pixel-screen">
-                                        <img src="${img}" alt="${app.name} UI Preview">
-                                    </div>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                `;
-                portfolioContainer.appendChild(showcase);
-            }
         });
 
         initScrollObserver();

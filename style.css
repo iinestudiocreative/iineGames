@@ -182,7 +182,7 @@ nav {
 
 .menu-logo-container {
     position: absolute;
-    top: 30px;
+    top: 34px;
     left: 30px;
     /* Align with content padding */
     width: auto;
@@ -207,6 +207,7 @@ nav {
     text-align: left;
     width: 100%;
     margin-top: -500px;
+    margin-left: -10px;
 }
 
 .menu-link {
@@ -359,6 +360,10 @@ nav {
     /* Fixed section height */
     padding: 0;
     overflow: hidden;
+}
+
+.game-info {
+    padding-left: 40px;
 }
 
 .game-section .container {
@@ -570,7 +575,27 @@ nav {
 
 /* Snake Section Special */
 .snake-bg {
-    background: radial-gradient(circle at 100% 0%, rgba(157, 0, 255, 0.1), transparent 50%);
+    background-image: url('assets/snake360_bg.webp');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.snake-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    /* Dark overlay */
+    z-index: 0;
+}
+
+.snake-bg .container {
+    position: relative;
+    z-index: 1;
 }
 
 .art-layer img {
