@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iineGames | Apps & Jeux Modernes</title>
+    <meta name="description"
+        content="Découvrez les créations de iineGames : EasyTrip, Snake360 et les services de iineStudio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header id="header">
+        <nav>
+            <a href="#hero" class="logo">
+                <img src="assets/Logo/iineGames_white.png" alt="iineGames Logo">
+            </a>
+            <!-- Controls Container -->
+            <div class="header-controls">
+                <!-- Language Globe -->
+                <button id="lang-switch" class="icon-btn" aria-label="Choisir la langue">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                        </path>
+                    </svg>
+                </button>
+
+                <!-- Hamburger Menu -->
+                <button id="menu-toggle" class="icon-btn" aria-label="Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Fullscreen Menu Overlay -->
+    <div id="fullscreen-menu" class="fullscreen-menu">
+        <button id="menu-close" class="icon-btn close-btn" aria-label="Fermer le menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <!-- Menu Logo -->
+        <div class="menu-logo-container">
+            <img src="assets/Logo/Logo Circle_iineGames_white.png" alt="iineGames" class="menu-logo">
+        </div>
+
+        <nav class="menu-content">
+            <a href="index.html" class="menu-link">ACCUEIL</a>
+            <a href="index.html#portfolio" class="menu-link">JEUX & APPS</a>
+            <a href="https://iinestudio.com" target="_blank" class="menu-link">IINESTUDIO</a>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="full-screen">
+            <div class="hero-content">
+                <h1 class="fade-in">Crée avec Passion. <br><span class="highlight">Jouer avec Style.</span></h1>
+                <p class="fade-in delay-1">iineGames réinvente l'expérience mobile avec des applications intelligentes
+                    et des jeux addictifs.</p>
+                <div class="scroll-indicator fade-in delay-2">
+                    <div class="mouse"></div>
+                    <span>Scroll</span>
+                </div>
+            </div>
+            <div class="hero-bg-accent"></div>
+        </section>
+
+        <div id="portfolio">
+            <!-- Rendered by JS -->
+        </div>
+
+        <!-- Dynamic iineStudio Section -->
+        <section id="studio" class="studio-section">
+            <!-- Rendered by JS -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 iineGames / iineStudio. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

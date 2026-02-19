@@ -1,0 +1,75 @@
+{
+    "apps": [
+        {
+            "id": "easytrip",
+            "name": "EasyTrip",
+            "slogan": "Planifiez, roulez, partagez — Le compagnon ultime du Rider.",
+            "description": "Une application hybride conçue pour les passionnés de moto, offrant une planification d'itinéraire intelligente, météo précise et gestion des coûts.",
+            "badge": "Nouveau Projet",
+            "image": "assets/easytrip_phone.png",
+            "type": "app",
+            "features": [
+                {
+                    "icon": "🗺️",
+                    "title": "Itinéraire",
+                    "desc": "Multi-étapes intelligent."
+                },
+                {
+                    "icon": "🌦️",
+                    "title": "Météo",
+                    "desc": "Badges dynamiques pass."
+                },
+                {
+                    "icon": "⛽",
+                    "title": "Coûts",
+                    "desc": "Carburant & Péages (ETC)."
+                },
+                {
+                    "icon": "💬",
+                    "title": "Social",
+                    "desc": "Sync Discord & Cloud."
+                }
+            ],
+            "links": {
+                "playstore": "https://play.google.com/store",
+                "learnmore": "easytrip.html"
+            },
+            "snapshots": [
+                "assets/easyTrip/UI/UI-01.jpg",
+                "assets/easyTrip/UI/UI-02.jpg",
+                "assets/easyTrip/UI/UI-03.jpg",
+                "assets/easyTrip/UI/UI-04.jpg",
+                "assets/easyTrip/UI/UI-05.jpg",
+                "assets/easyTrip/UI/UI-06.jpg",
+                "assets/easyTrip/UI/UI-07.jpg"
+            ],
+            "stack": "React | Vite | Firebase | Capacitor"
+        },
+        {
+            "id": "snake360",
+            "name": "Snake360",
+            "slogan": "Liberté de mouvement totale sur 360°.",
+            "description": "Une réinvention moderne du classique Snake. Rotation fluide, boutique de skins et performances optimisées pour Android 15+.",
+            "image": "assets/snake360_hero.png",
+            "type": "game",
+            "bullets": [
+                "Rotation complète pour une précision accrue",
+                "Personnalisation : Skins, musiques, niveaux",
+                "Optimisé pour Android 15 (SDK 36)"
+            ],
+            "links": {
+                "playstore": "https://play.google.com/store/apps/details?id=com.iinegame.snake360"
+            }
+        }
+    ],
+    "studio": {
+        "name": "iineStudio",
+        "description": "Publicité vidéo, événementiel et services digitaux premium.",
+        "url": "https://www.iinestudio.com",
+        "services": [
+            "Production Vidéo",
+            "Création de Contenu",
+            "Optimisation Ads"
+        ]
+    }
+}
