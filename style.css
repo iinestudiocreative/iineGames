@@ -334,8 +334,8 @@ nav {
 .easytrip-bg {
     background-image: url('assets/easyTrip/Background/Main1.jpg');
     background-size: cover;
-    background-position: center calc(50% - 19px);
-    /* Shifted up 23px */
+    background-position: center calc(50% + 1px);
+    /* Shifted down 15px from previous */
     position: relative;
 }
 
@@ -356,12 +356,28 @@ nav {
     z-index: 1;
 }
 
+/* Portfolio Container — eliminate gaps between sections */
+#portfolio {
+    font-size: 0;
+    /* Collapse whitespace between sections */
+    line-height: 0;
+}
+
+#portfolio>section {
+    font-size: 14px;
+    /* Restore font-size inside sections */
+    line-height: 1.6;
+}
+
 /* Section Common */
 .game-section {
-    height: 800px;
+    height: 600px;
     /* Fixed section height */
     padding: 0;
+    margin: 0;
     overflow: hidden;
+    border: none;
+    display: block;
 }
 
 .game-info {
@@ -370,17 +386,17 @@ nav {
 
 .game-section .container {
     height: 100%;
-    padding: 0 80px 0 85px;
-    /* Shift content 5px right */
+    padding: 0 80px;
     max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 
 .game-section .grid-2 {
-    height: 100%;
+    width: 100%;
     gap: 30px;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 .title-xl {
@@ -471,10 +487,8 @@ nav {
     width: 100%;
     height: auto;
     max-height: none;
-    /* Suppression de la limite de hauteur */
     filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.7));
-    transform: scale(1.1);
-    /* Petit boost supplémentaire pour l'effet "WOW" */
+    transform: scale(2.09);
 }
 
 /* Pixel Mockup */

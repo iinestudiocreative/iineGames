@@ -6,7 +6,7 @@
             "slogan": "Planifiez, roulez, partagez — Le compagnon ultime du Rider.",
             "description": "Une application hybride conçue pour les passionnés de moto, offrant une planification d'itinéraire intelligente, météo précise et gestion des coûts.",
             "badge": "Nouveau Projet",
-            "image": "assets/easytrip_phone.png",
+            "image": "assets/easyTrip/UI/04_Google_Pixel_8A_Phone_Mockup.webp",
             "type": "app",
             "features": [
                 {
@@ -50,7 +50,7 @@
             "name": "Snake360",
             "slogan": "Liberté de mouvement totale sur 360°.",
             "description": "Une réinvention moderne du classique Snake. Rotation fluide, boutique de skins et performances optimisées pour Android 15+.",
-            "image": "assets/snake360_hero.png",
+            "image": "assets/Snake360/snake360_hero.png",
             "type": "game",
             "bullets": [
                 "Rotation complète pour une précision accrue",
