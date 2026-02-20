@@ -381,22 +381,25 @@ nav {
 }
 
 .game-info {
-    padding-left: 40px;
+    padding-left: 0;
 }
 
 .game-section .container {
     height: 100%;
     padding: 0 80px;
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
+    /* Symmetric — now works correctly */
+    max-width: 100%;
+    margin: 0;
+    /* DO NOT set display:flex here — it overrides display:grid from .grid-2 */
 }
 
 .game-section .grid-2 {
-    width: 100%;
+    /* grid-2 already has display:grid + grid-template-columns:1fr 1fr */
+    height: 100%;
     gap: 30px;
     align-items: center;
+    align-content: center;
+    /* Vertically center the grid content */
 }
 
 .title-xl {
@@ -488,7 +491,7 @@ nav {
     height: auto;
     max-height: none;
     filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.7));
-    transform: scale(2.09);
+    transform: scale(1.8);
 }
 
 /* Pixel Mockup */
@@ -861,10 +864,14 @@ footer {
     /* ── Phone Mockup (EasyTrip) ── */
     .phone-mockup {
         max-width: 280px;
+        margin: 0 auto;
     }
 
     .phone-mockup img {
         max-height: 400px;
+        transform: none;
+        /* Reset the desktop scale */
+        object-fit: contain;
     }
 
     /* ── Art Layer (Snake360) ── */
