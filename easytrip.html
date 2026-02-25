@@ -18,13 +18,14 @@
         /* EasyTrip Specific Styles */
         .easytrip-hero {
             position: relative;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
             overflow: hidden;
+            padding: 120px 20px 80px;
         }
 
         .easytrip-hero::before {
@@ -35,147 +36,221 @@
             width: 100%;
             height: 100%;
             background: url('assets/easyTrip/Background/Main1.jpg') no-repeat center center/cover;
-            filter: brightness(0.4);
+            filter: brightness(0.35);
             z-index: -1;
         }
 
-        .et-title {
-            font-size: 80px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #39ff14, #0084ff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .et-slogan {
-            font-size: 24px;
-            color: #ccc;
-            margin-bottom: 40px;
-            font-weight: 300;
-        }
-
-        .feature-showcase {
-            padding: 100px 0;
-            background: #0a0a0b;
-        }
-
-        .showcase-row {
+        .hero-container {
+            max-width: 900px;
+            width: 100%;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 80px;
-            margin-bottom: 120px;
+            gap: 40px;
         }
 
-        .showcase-row.reverse {
-            flex-direction: row-reverse;
-        }
-
-        .showcase-text {
+        .et-content {
             flex: 1;
         }
 
-        .showcase-text h3 {
-            font-size: 42px;
+        .et-logo-container {
             margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .et-main-logo {
+            max-width: 300px;
+            height: auto;
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.1));
+        }
+
+        .et-title {
+            display: none;
+            /* Hidden when using logo image */
+        }
+
+        .et-subtitle {
+            font-size: clamp(20px, 4vw, 32px);
+            font-weight: 600;
+            margin-bottom: 15px;
             color: white;
         }
 
-        .showcase-text p {
-            font-size: 18px;
+        .et-tagline {
+            font-size: clamp(16px, 2vw, 20px);
             color: #a0a0a5;
-            line-height: 1.8;
+            margin-bottom: 40px;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .showcase-visual {
-            flex: 1;
-            position: relative;
+        /* Buttons Container */
+        .download-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 0;
+            /* Removed margin to bring image closer */
         }
 
-        /* Pixel Mockup Override for this page */
-        .pixel-mockup-large {
-            width: 320px;
-            height: 640px;
+        .btn-download {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 20px;
+            border-radius: 8px;
+            /* Matches Google Play Badge radius */
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 0.8px solid #a6a6a6;
+            /* Subtle grey stroke like official badge */
+            background: #000000;
+            box-sizing: border-box;
         }
 
-        @media (max-width: 968px) {
+        .btn-download:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
 
-            .easytrip-hero {
-                height: 100vh;
-                min-height: 500px;
-            }
+        .btn-download .icon {
+            width: 24px;
+            height: 24px;
+        }
 
-            .showcase-row,
-            .showcase-row.reverse {
+        .btn-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .btn-label {
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            opacity: 0.9;
+            margin-bottom: -1px;
+            font-family: sans-serif;
+        }
+
+        .btn-main {
+            font-size: 15px;
+            font-weight: 600;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        .btn-google-play-official {
+            display: inline-block;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            margin-top: -7px;
+            /* Shifted up as requested */
+        }
+
+        .btn-google-play-official:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        .play-badge {
+            height: 65px;
+            /* Increased from 50px (approx +30%) */
+            width: auto;
+        }
+
+        .btn-web {
+            height: 49.7px;
+            /* Reduced by ~1.5% from 50.5px */
+            width: 167.5px;
+            /* Reduced by ~1.5% from 170px */
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-web .btn-text {
+            margin-top: 4px;
+            /* Lowered code by another 2px (total 4px) */
+        }
+
+        .btn-web .btn-label {
+            font-size: 8.5px;
+            margin-bottom: -4px;
+        }
+
+        .btn-web .btn-main {
+            font-size: 15px;
+        }
+
+        .btn-web .icon svg {
+            width: 26px;
+            height: 26px;
+            margin-top: -2px;
+            /* Lowered icon by 1px (from -3px to -2px) */
+        }
+
+        /* Legal Section */
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .legal-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .legal-link:hover {
+            color: #aaa;
+        }
+
+        /* Direct UI Image */
+        .hero-mockup {
+            max-width: 700px;
+            /* Smaller as requested */
+            width: 90%;
+            margin: -10px auto 0;
+            /* Negative margin to pull it as close as possible without overlap */
+            border-radius: 0;
+            overflow: visible;
+            box-shadow: none;
+            /* Removed the shadow "box" */
+            border: none;
+            /* Removed the border */
+        }
+
+        .hero-mockup img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .legal-links {
                 flex-direction: column;
-                text-align: center;
-                gap: 40px;
-                margin-bottom: 80px;
+                gap: 15px;
+                border: none;
             }
 
-            .showcase-text h3 {
-                font-size: 32px;
-            }
-
-            .showcase-text p {
-                font-size: 16px;
-            }
-
-            .et-title {
-                font-size: 48px;
-            }
-
-            .et-slogan {
-                font-size: 18px;
-                padding: 0 20px;
-            }
-
-            .pixel-mockup-large {
-                width: 240px;
-                height: 480px;
-                margin: 0 auto;
-            }
-
-            .showcase-visual {
-                display: flex;
-                justify-content: center;
-            }
-
-            .feature-showcase {
-                padding: 60px 0;
-            }
-
-            .easytrip-hero .scroll-indicator {
-                position: absolute;
-                bottom: 40px;
-                left: 0;
-                right: 0;
-                margin: 0 auto;
-                width: fit-content;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .et-title {
-                font-size: 36px;
-            }
-
-            .et-slogan {
-                font-size: 16px;
-            }
-
-            .showcase-text h3 {
-                font-size: 26px;
-            }
-
-            .showcase-text p {
-                font-size: 14px;
-            }
-
-            .pixel-mockup-large {
-                width: 200px;
-                height: 400px;
+            .download-buttons {
+                flex-direction: column;
+                align-items: stretch;
+                max-width: 300px;
+                margin: 0 auto 40px;
             }
         }
     </style>
@@ -187,21 +262,23 @@
             <a href="index.html" class="logo">
                 <img src="assets/Logo/iineGames_white.png" alt="iineGames Logo">
             </a>
-            <!-- Controls Container -->
             <div class="header-controls">
                 <!-- Language Globe -->
-                <button id="lang-switch" class="icon-btn" aria-label="Choisir la langue">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                        <path
-                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                        </path>
-                    </svg>
-                </button>
-
-                <!-- Hamburger Menu -->
+                <div class="lang-selector">
+                    <button id="lang-switch" class="icon-btn" aria-label="Choisir la langue">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="lang-dropdown" class="lang-dropdown">
+                        <!-- Content will be injected by script -->
+                    </div>
+                </div>
                 <button id="menu-toggle" class="icon-btn" aria-label="Menu">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -214,7 +291,6 @@
         </nav>
     </header>
 
-    <!-- Fullscreen Menu Overlay -->
     <div id="fullscreen-menu" class="fullscreen-menu">
         <button id="menu-close" class="icon-btn close-btn" aria-label="Fermer le menu">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
@@ -223,107 +299,139 @@
                 <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
         </button>
-
-        <!-- Menu Logo -->
         <div class="menu-logo-container">
             <img src="assets/Logo/Logo Circle_iineGames_white.png" alt="iineGames" class="menu-logo">
         </div>
-
         <nav class="menu-content">
-            <a href="index.html" class="menu-link">ACCUEIL</a>
-            <a href="index.html#portfolio" class="menu-link">JEUX & APPS</a>
-            <a href="https://iinestudio.com" target="_blank" class="menu-link">IINESTUDIO</a>
+            <a href="index.html" class="menu-link" data-i18n="nav.home">ACCUEIL</a>
+            <a href="index.html#portfolio" class="menu-link" data-i18n="nav.gamesApps">JEUX & APPS</a>
+            <a href="https://iinestudio.com" target="_blank" class="menu-link" data-i18n="nav.studio">IINESTUDIO</a>
         </nav>
     </div>
 
     <main>
         <section class="easytrip-hero">
-            <div class="container">
-                <h1 class="et-title fade-in">EasyTrip</h1>
-                <p class="et-slogan fade-in delay-1">Planifiez, voyagez, partagez ! <br>Le compagnon de toutes vos
-                    aventures.</p>
-                <div class="scroll-indicator fade-in delay-2">
-                    <div class="mouse"></div>
-                    <span>Explorer</span>
+            <div class="hero-container">
+                <div class="et-content reveal">
+                    <div class="et-logo-container">
+                        <img src="assets/easyTrip/UI/EasyTrip_logo_line_Color_Wht.png" alt="EasyTrip Logo"
+                            class="et-main-logo">
+                    </div>
+                    <h2 class="et-subtitle" data-i18n="easytrip.slogan">Planifiez, voyagez, partagez !</h2>
+                    <p class="et-tagline" data-i18n="easytrip.tagline">Le compagnon de toutes vos aventures.</p>
+
+                    <div class="download-buttons">
+                        <!-- Play Store Button (Official Badge) -->
+                        <a href="https://play.google.com/store/apps/details?id=com.iinestudio.easytrip"
+                            class="btn-google-play-official" target="_blank">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/fr_badge_web_generic.png"
+                                alt="Disponible sur Google Play" class="play-badge">
+                        </a>
+
+                        <!-- Web Version Button -->
+                        <a href="https://easytrip-app-b6d1e.web.app/" class="btn-download btn-web" target="_blank">
+                            <div class="icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path
+                                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="btn-text">
+                                <span class="btn-label" data-i18n="easytrip.accessWeb">Accéder à la</span>
+                                <span class="btn-main" data-i18n="easytrip.webVersion">Version Web</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="hero-mockup">
+                        <img src="assets/easyTrip/UI/EasyTrip_Demo_UI_2.webp" alt="EasyTrip App Interface">
+                    </div>
+
+                    <div class="legal-links">
+                        <a href="https://easytrip-app-b6d1e.web.app/privacy.html" class="legal-link" target="_blank"
+                            data-i18n="easytrip.privacyPolicy">Privacy Policy</a>
+                        <a href="https://easytrip-app-b6d1e.web.app/terms.html" class="legal-link" target="_blank"
+                            data-i18n="easytrip.termsOfUse">Terms of Use</a>
+                    </div>
                 </div>
             </div>
         </section>
-
-        <section class="feature-showcase">
-            <div class="container">
-
-                <!-- Feature 1: Planification -->
-                <div class="showcase-row reveal">
-                    <div class="showcase-text">
-                        <h3>Planification Sur Mesure</h3>
-                        <p>Concevez des itinéraires multi-étapes précis pour toutes vos escapades. Que vous soyez sur
-                            deux ou quatre roues, notre interface intuitive vous aide à tracer la route idéale en
-                            quelques clics.</p>
-                    </div>
-                    <div class="showcase-visual">
-                        <div class="pixel-mockup pixel-mockup-large">
-                            <div class="pixel-camera"></div>
-                            <div class="pixel-screen">
-                                <img src="assets/easyTrip/UI/UI-01.jpg" alt="Planification">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Feature 2: Collaboration -->
-                <div class="showcase-row reverse reveal">
-                    <div class="showcase-text">
-                        <h3>Organisation Collaborative</h3>
-                        <p>Ne voyagez plus seul dans l'organisation. Partagez vos projets avec vos amis, coordonnez vos
-                            arrêts et assurez-vous que tout le monde est sur la même longueur d'onde avant le départ.
-                        </p>
-                    </div>
-                    <div class="showcase-visual">
-                        <div class="pixel-mockup pixel-mockup-large">
-                            <div class="pixel-camera"></div>
-                            <div class="pixel-screen">
-                                <img src="assets/easyTrip/UI/UI-02.jpg" alt="Collaboration">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Feature 3: Sync & Communauté -->
-                <div class="showcase-row reveal">
-                    <div class="showcase-text">
-                        <h3>Partage & Synchronisation</h3>
-                        <p>Retrouvez vos itinéraires sur tous vos appareils grâce à la synchronisation cloud. Partagez
-                            vos plus belles découvertes avec la communauté et inspirez-vous des trajets d'autres
-                            explorateurs.</p>
-                    </div>
-                    <div class="showcase-visual">
-                        <div class="pixel-mockup pixel-mockup-large">
-                            <div class="pixel-camera"></div>
-                            <div class="pixel-screen">
-                                <img src="assets/easyTrip/UI/UI-03.jpg" alt="Synchronisation">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 iineGames. Tous droits réservés.</p>
+            <p data-i18n="footer.rights">&copy; 2026 iineGames. Tous droits réservés.</p>
         </div>
     </footer>
 
+    <!-- i18next CDN -->
+    <script src="https://unpkg.com/i18next@23.16.8/i18next.min.js"></script>
+    <!-- i18n Configuration -->
+    <script src="i18n.js"></script>
+
     <script>
-        // Minimal script for scroll reveal
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
+            // ─── Initialize i18n ───
+            await initI18n();
+
             const header = document.getElementById('header');
 
-            // Menu Logic
+            function translatePage() {
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (key === 'easytrip.slogan' || key === 'studio.description') {
+                        el.innerHTML = t(key);
+                    } else {
+                        el.textContent = t(key);
+                    }
+                });
+            }
+            translatePage();
+
+            // ─── Language Selector ───
+            const langSwitch = document.getElementById('lang-switch');
+            const langDropdown = document.getElementById('lang-dropdown');
+
+            if (langSwitch && langDropdown) {
+                const renderLangDropdown = () => {
+                    const langs = getSupportedLanguages();
+                    const currentLang = getCurrentLanguage();
+
+                    langDropdown.innerHTML = langs.map(lang => `
+                        <button class="lang-item ${lang.code === currentLang ? 'active' : ''}" data-lang="${lang.code}">
+                            ${lang.label}
+                        </button>
+                    `).join('');
+
+                    langDropdown.querySelectorAll('.lang-item').forEach(btn => {
+                        btn.addEventListener('click', () => {
+                            const newLang = btn.getAttribute('data-lang');
+                            changeLanguage(newLang);
+                            langDropdown.classList.remove('open');
+                        });
+                    });
+                };
+
+                langSwitch.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    renderLangDropdown();
+                    langDropdown.classList.toggle('open');
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!langDropdown.contains(e.target) && !langSwitch.contains(e.target)) {
+                        langDropdown.classList.remove('open');
+                    }
+                });
+            }
+
+            document.addEventListener('languageChanged', () => translatePage());
+
+            // ─── Menu Logic ───
             const menuToggle = document.getElementById('menu-toggle');
             const menuClose = document.getElementById('menu-close');
             const fullscreenMenu = document.getElementById('fullscreen-menu');
@@ -356,22 +464,6 @@
             }, { threshold: 0.1 });
 
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-            // Smooth Scroll
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    if (this.getAttribute('href') === '#') return;
-                    e.preventDefault();
-
-                    const targetElement = document.querySelector(this.getAttribute('href'));
-                    if (targetElement) {
-                        closeMenu(); // Close menu if open
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
         });
     </script>
 </body>

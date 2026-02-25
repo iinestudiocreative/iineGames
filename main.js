@@ -75,10 +75,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    // ─── Listen for language changes to re-render ───
+    // ─── Listen for language changes ───
     document.addEventListener('languageChanged', async () => {
         translateStaticElements();
-        // Re-render dynamic content with new translations
+        // Dynamic re-render disabled to preserve static HTML
+        /*
         try {
             const response = await fetch('data.json');
             const data = await response.json();
@@ -87,6 +88,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         } catch (error) {
             console.error('Error reloading data on language change:', error);
         }
+        */
     });
 
     // Header scroll background
@@ -101,7 +103,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     // ─── Translate static HTML elements ───
     translateStaticElements();
 
-    // ─── Fetch data and render ───
+    // ─── Fetch data and render DISABLED ───
+    /*
     try {
         const response = await fetch('data.json');
         const data = await response.json();
@@ -110,6 +113,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch (error) {
         console.error('Error loading data:', error);
     }
+    */
+
+    // Initialize observers for reveal animations on static elements
+    initScrollObserver();
 
     // Smooth scroll for nav links
     // Smooth scroll for nav links (including mobile menu)

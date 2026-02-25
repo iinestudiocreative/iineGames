@@ -61,6 +61,12 @@ const resources = {
                     }
                 },
                 learnMore: 'En savoir plus',
+                tagline: 'Le compagnon de toutes vos aventures.',
+                webVersion: 'Version Web',
+                accessWeb: 'Accéder à la',
+                availableOn: 'Disponible sur',
+                privacyPolicy: 'Privacy Policy',
+                termsOfUse: 'Terms of Use',
                 stack: 'React | Vite | Firebase | Capacitor'
             },
 
@@ -127,6 +133,12 @@ const resources = {
                     social: { title: 'Social', desc: 'Share with the Discord community.' }
                 },
                 learnMore: 'Learn More',
+                tagline: 'The companion for all your adventures.',
+                webVersion: 'Web Version',
+                accessWeb: 'Access',
+                availableOn: 'Available on',
+                privacyPolicy: 'Privacy Policy',
+                termsOfUse: 'Terms of Use',
                 stack: 'React | Vite | Firebase | Capacitor'
             },
             snake360: {
@@ -185,6 +197,12 @@ const resources = {
                     social: { title: 'ソーシャル', desc: 'Discordコミュニティで共有' }
                 },
                 learnMore: '詳しく見る',
+                tagline: 'あらゆる冒険のベストパートナー。',
+                webVersion: 'ウェブ版',
+                accessWeb: '活用する',
+                availableOn: 'で入手可能',
+                privacyPolicy: 'プライバシーポリシー',
+                termsOfUse: '利用規約',
                 stack: 'React | Vite | Firebase | Capacitor'
             },
             snake360: {
