@@ -60,7 +60,7 @@ const resources = {
                         desc: 'Partagez avec la communauté Discord.'
                     }
                 },
-                learnMore: 'En savoir plus',
+                learnMore: 'Découvrir',
                 tagline: 'Le compagnon de toutes vos aventures.',
                 webVersion: 'Version Web',
                 accessWeb: 'Accéder à la',
@@ -132,7 +132,7 @@ const resources = {
                     sync: { title: 'Sync', desc: 'Access your trips anywhere.' },
                     social: { title: 'Social', desc: 'Share with the Discord community.' }
                 },
-                learnMore: 'Learn More',
+                learnMore: 'Discover',
                 tagline: 'The companion for all your adventures.',
                 webVersion: 'Web Version',
                 accessWeb: 'Access',
@@ -196,7 +196,7 @@ const resources = {
                     sync: { title: '同期', desc: 'どこからでも旅にアクセス' },
                     social: { title: 'ソーシャル', desc: 'Discordコミュニティで共有' }
                 },
-                learnMore: '詳しく見る',
+                learnMore: '発見する',
                 tagline: 'あらゆる冒険のベストパートナー。',
                 webVersion: 'ウェブ版',
                 accessWeb: '活用する',
