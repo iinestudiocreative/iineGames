@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iineGames | Apps & Jeux Modernes</title>
+    <title>iineGames | Créateur d'Expériences Mobiles</title>
     <meta name="description"
         content="Découvrez les créations de iineGames : EasyTrip, Snake360 et les services de iineStudio.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=11">
+    <link rel="icon" type="image/png" href="assets/Logo/Logo Circle_iineGames_white.png">
 </head>
 
 <body>
@@ -24,16 +25,21 @@
             <!-- Controls Container -->
             <div class="header-controls">
                 <!-- Language Globe -->
-                <button id="lang-switch" class="icon-btn" aria-label="Choisir la langue">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                        <path
-                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                        </path>
-                    </svg>
-                </button>
+                <div class="lang-selector">
+                    <button id="lang-switch" class="icon-btn" aria-label="Choisir la langue">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="lang-dropdown" class="lang-dropdown">
+                        <!-- Content will be injected by main.js -->
+                    </div>
+                </div>
 
                 <!-- Hamburger Menu -->
                 <button id="menu-toggle" class="icon-btn" aria-label="Menu">
@@ -74,11 +80,11 @@
         <!-- Hero Section -->
         <section id="hero" class="full-screen">
             <div class="hero-content">
-                <h1 class="fade-in" data-i18n-html="hero.title">Crée avec Passion. <br><span class="highlight">Jouer
+                <h1 class="fade-in" data-i18n-html="hero.title">Créé avec Passion. <br><span
+                        class="highlight">L'Expérience
                         avec Style.</span></h1>
-                <p class="fade-in delay-1" data-i18n="hero.subtitle">iineGames réinvente l'expérience mobile avec des
-                    applications intelligentes
-                    et des jeux addictifs.</p>
+                <p class="fade-in delay-1" data-i18n="hero.subtitle">Améliorez votre quotidien avec nos outils et
+                    évadez-vous avec nos jeux. Tout simplement.</p>
                 <div class="scroll-indicator fade-in delay-2">
                     <div class="mouse"></div>
                     <span data-i18n="hero.scroll">Scroll</span>

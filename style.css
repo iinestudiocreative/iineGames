@@ -2,7 +2,7 @@
     --bg-dark: #0a0a0b;
     --bg-card: #141417;
     --accent-blue: #0084ff;
-    --accent-neon: #39ff14;
+    --accent-neon: #70e8f6;
     --accent-purple: #9d00ff;
     --text-white: #ffffff;
     --text-gray: #a0a0a5;
@@ -99,6 +99,73 @@ nav {
     align-items: center;
     gap: 20px;
 }
+
+.lang-selector {
+    position: relative;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: calc(100% + 15px);
+    right: 0;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 10px 0;
+    min-width: 140px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 3000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.lang-dropdown.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-item {
+    background: none;
+    border: none;
+    color: #888;
+    padding: 12px 20px;
+    text-align: left;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+.lang-item:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.lang-item.active {
+    color: var(--accent-neon, #70e8f6);
+}
+
+.lang-item.active::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-neon, #70e8f6);
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 0 0 8px var(--accent-neon, #70e8f6);
+}
+
 
 .icon-btn {
     background: none;
@@ -371,13 +438,33 @@ nav {
 
 /* Section Common */
 .game-section {
-    height: 600px;
-    /* Fixed section height */
+    height: 700px;
+    /* Augmenté de 600px à 700px pour plus de confort */
     padding: 0;
     margin: 0;
     overflow: hidden;
     border: none;
     display: block;
+}
+
+/* Grande résolution (Desktop) */
+@media (min-width: 1200px) {
+    .game-section {
+        height: 800px;
+    }
+
+    .game-section .grid-2 {
+        gap: 120px;
+    }
+
+    .game-section .container {
+        padding: 0 100px !important;
+    }
+
+    .art-layer img,
+    .phone-mockup img {
+        max-width: 90%;
+    }
 }
 
 .game-info {
@@ -621,10 +708,29 @@ nav {
     z-index: 1;
 }
 
+.art-layer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 20px;
+}
+
 .art-layer img {
     width: 100%;
-    border-radius: 24px;
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+    transform: scale(1);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.art-layer:hover img {
+    transform: scale(1.05);
 }
 
 .bullet-list {
@@ -647,74 +753,106 @@ nav {
     font-weight: bold;
 }
 
-/* Studio Section */
+/* Studio Section Styling */
 .studio-section {
-    padding: 150px 0;
-    background: #000;
-}
-
-.text-center {
+    padding: 100px 0;
+    background: #0a0a0a;
+    position: relative;
+    overflow: hidden;
     text-align: center;
 }
 
-.divider {
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
-    margin: 20px auto 40px;
-    border-radius: 2px;
+.studio-logo-container {
+    margin-bottom: 20px;
+}
+
+.studio-logo-img {
+    height: 40px;
+    width: auto;
+    opacity: 0.9;
+}
+
+.studio-tagline {
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    color: var(--accent-neon, #70e8f6);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-weight: 600;
 }
 
 .studio-desc {
-    font-size: 24px;
-    color: var(--text-gray);
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto 40px;
+    color: #aaa;
+    line-height: 1.8;
+    font-size: 1.1rem;
 }
 
-.studio-link-box {
-    margin-bottom: 60px;
-}
-
-.studio-link {
-    font-family: var(--font-heading);
-    font-size: 48px;
-    font-weight: 800;
-    color: var(--text-white);
-    text-decoration: none;
-    transition: var(--transition);
-    position: relative;
-}
-
-.studio-link::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--text-white);
-    transition: var(--transition);
-}
-
-.studio-link:hover::after {
-    width: 100%;
-}
-
-.studio-services {
+.studio-services-grid {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    align-items: center;
+    gap: 20px;
     flex-wrap: wrap;
+    margin-bottom: 50px;
+    padding: 0 20px;
 }
 
-.service {
-    font-size: 18px;
+.studio-service-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.service-dot {
+    width: 3px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+}
+
+.service-text {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    color: #888;
+    text-transform: uppercase;
+}
+
+/* On n'affiche pas de point pour le premier item si on veut un look purement séparé par du vide ou des points media */
+.studio-service-item:first-child .service-dot {
+    display: none;
+}
+
+.studio-service-item:hover .service-text {
+    color: white;
+    letter-spacing: 2px;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 15px 35px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
     font-weight: 600;
-    color: var(--text-gray);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 10px 25px;
-    border-radius: 100px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: black;
+    border-color: white;
+    transform: scale(1.05);
 }
 
 /* Footer */
@@ -863,14 +1001,18 @@ footer {
 
     /* ── Phone Mockup (EasyTrip) ── */
     .phone-mockup {
-        max-width: 280px;
-        margin: 0 auto;
+        width: 100%;
+        max-width: none;
+        margin: 20px auto 0;
+        overflow: visible;
     }
 
     .phone-mockup img {
-        max-height: 400px;
+        width: 100%;
+        max-height: none;
+        margin-left: 0;
+        /* Reset centering since it's 100% */
         transform: none;
-        /* Reset the desktop scale */
         object-fit: contain;
     }
 
@@ -967,11 +1109,16 @@ footer {
     }
 
     .phone-mockup {
-        max-width: 220px;
+        width: 100%;
+        max-width: none;
     }
 
     .phone-mockup img {
-        max-height: 350px;
+        width: 130%;
+        /* Even wider on very small screens */
+        max-height: none;
+        margin-left: -15%;
+        /* Center the overflow */
     }
 
     .art-layer img {

@@ -35,18 +35,43 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    // ─── Language Switch ───
+    // ─── Language Selector Dropdown ───
     const langSwitch = document.getElementById('lang-switch');
-    if (langSwitch) {
-        langSwitch.addEventListener('click', () => {
+    const langDropdown = document.getElementById('lang-dropdown');
+
+    if (langSwitch && langDropdown) {
+        // Build the dropdown items
+        const renderLangDropdown = () => {
             const langs = getSupportedLanguages();
-            if (langs.length <= 1) {
-                console.log('[i18n] Only one language available');
-                return;
+            const currentLang = getCurrentLanguage();
+
+            langDropdown.innerHTML = langs.map(lang => `
+                <button class="lang-item ${lang.code === currentLang ? 'active' : ''}" data-lang="${lang.code}">
+                    ${lang.label}
+                </button>
+            `).join('');
+
+            // Add click events to new buttons
+            langDropdown.querySelectorAll('.lang-item').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const newLang = btn.getAttribute('data-lang');
+                    changeLanguage(newLang);
+                    langDropdown.classList.remove('open');
+                });
+            });
+        };
+
+        langSwitch.addEventListener('click', (e) => {
+            e.stopPropagation();
+            renderLangDropdown();
+            langDropdown.classList.toggle('open');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!langDropdown.contains(e.target) && !langSwitch.contains(e.target)) {
+                langDropdown.classList.remove('open');
             }
-            const currentIdx = langs.findIndex(l => l.code === getCurrentLanguage());
-            const nextIdx = (currentIdx + 1) % langs.length;
-            changeLanguage(langs[nextIdx].code);
         });
     }
 
@@ -185,14 +210,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         const studioSection = document.getElementById('studio');
         studioSection.innerHTML = `
             <div class="container text-center">
-                <h2 class="title-l">${studio.name}</h2>
-                <div class="divider"></div>
-                <p class="studio-desc reveal">${studio.description}</p>
-                <div class="studio-link-box reveal">
-                    <a href="${studio.url}" class="studio-link" target="_blank">${studio.url.replace('https://', '')}</a>
+                <div class="studio-logo-container reveal">
+                    <img src="assets/Logo/Logo_white.png" alt="iineStudio Logo" class="studio-logo-img">
                 </div>
-                <div class="studio-services reveal">
-                    ${studio.services.map(s => `<div class="service">${s}</div>`).join('')}
+                <span class="studio-tagline reveal">${t('studio.tagline')}</span>
+                <div class="divider"></div>
+                <p class="studio-desc reveal">${t('studio.description')}</p>
+                
+                <div class="studio-services-grid reveal">
+                    ${studio.services.map(s => `
+                        <div class="studio-service-item">
+                            <span class="service-dot"></span>
+                            <span class="service-text">${s}</span>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <div class="studio-link-box reveal">
+                    <a href="${studio.url}" class="btn btn-outline" target="_blank">
+                        Découvrir le Studio
+                    </a>
                 </div>
             </div>
         `;

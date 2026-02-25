@@ -8,10 +8,12 @@
  * 3. Ajouter le label dans `languageLabels`
  */
 
-const SUPPORTED_LANGUAGES = ['fr'];
+const SUPPORTED_LANGUAGES = ['fr', 'en', 'ja'];
 
 const languageLabels = {
-    fr: 'Français'
+    fr: 'Français',
+    en: 'English',
+    ja: '日本語'
 };
 
 const resources = {
@@ -28,9 +30,9 @@ const resources = {
 
             // ─── Hero Section ───
             hero: {
-                title: 'Crée avec Passion.',
-                titleHighlight: 'Jouer avec Style.',
-                subtitle: "iineGames réinvente l'expérience mobile avec des applications intelligentes et des jeux addictifs.",
+                title: 'Créé avec Passion.',
+                titleHighlight: "L'Expérience avec Style.",
+                subtitle: "Améliorez votre quotidien avec nos outils et évadez-vous avec nos jeux. Tout simplement.",
                 scroll: 'Scroll'
             },
 
@@ -38,24 +40,24 @@ const resources = {
             easytrip: {
                 badge: 'Nouveau Projet',
                 name: 'EasyTrip',
-                slogan: 'Planifiez, roulez, partagez — Le compagnon ultime du Rider.',
-                description: "Une application hybride conçue pour les passionnés de moto, offrant une planification d'itinéraire intelligente, météo précise et gestion des coûts.",
+                slogan: 'Planifiez, voyagez, partagez ! <br>Le compagnon de toutes vos aventures.',
+                description: "Concevez des itinéraires sur mesure et organisez vos sorties en toute simplicité. EasyTrip vous permet de planifier chaque étape de votre voyage et de coordonner vos aventures avec vos proches pour une expérience partagée inoubliable.",
                 features: {
                     itinerary: {
                         title: 'Itinéraire',
                         desc: 'Multi-étapes intelligent.'
                     },
-                    weather: {
-                        title: 'Météo',
-                        desc: 'Badges dynamiques pass.'
+                    collab: {
+                        title: 'Collaboratif',
+                        desc: 'Organisez vos sorties à plusieurs.'
                     },
-                    costs: {
-                        title: 'Coûts',
-                        desc: 'Carburant & Péages (ETC).'
+                    sync: {
+                        title: 'Synchronisation',
+                        desc: 'Retrouvez vos voyages partout.'
                     },
                     social: {
                         title: 'Social',
-                        desc: 'Sync Discord & Cloud.'
+                        desc: 'Partagez avec la communauté Discord.'
                     }
                 },
                 learnMore: 'En savoir plus',
@@ -65,12 +67,12 @@ const resources = {
             // ─── Snake360 Game ───
             snake360: {
                 name: 'Snake360',
-                slogan: 'Liberté de mouvement totale sur 360°.',
-                description: 'Une réinvention moderne du classique Snake. Rotation fluide, boutique de skins et performances optimisées pour Android 15+.',
+                slogan: 'Mettez votre perspective à rude épreuve.',
+                description: "Maîtrisez la rotation libre à 360° et survivez au cœur d'une arène circulaire sans limites.",
                 bullets: {
-                    rotation: 'Rotation complète pour une précision accrue',
-                    customization: 'Personnalisation : Skins, musiques, niveaux',
-                    optimized: 'Optimisé pour Android 15 (SDK 36)'
+                    rotation: 'Défiez votre esprit dans une nouvelle dimension',
+                    customization: 'Progression dynamique : Modes de jeu et niveaux évolutifs',
+                    optimized: 'Style unique : Skins et thèmes musicaux'
                 },
                 playAndroid: 'Jouer sur Android'
             },
@@ -83,17 +85,134 @@ const resources = {
             // ─── iineStudio Section ───
             studio: {
                 name: 'iineStudio',
-                description: 'Publicité vidéo, événementiel et services digitaux premium.',
+                tagline: "L'expertise créative au-delà du jeu.",
+                description: "iineGames est né de l'expertise technique de iineStudio. <br>De la production vidéo premium à l'événementiel, des installations interactives au 3D motion design, nous accompagnons les marques dans leur communication visuelle avec des solutions digitales sur mesure.",
                 services: {
                     video: 'Production Vidéo',
                     content: 'Création de Contenu',
-                    ads: 'Optimisation Ads'
+                    ads: 'Stage & Installations Interactives'
                 }
             },
 
             // ─── Footer ───
             footer: {
                 rights: '© 2026 iineGames / iineStudio. Tous droits réservés.'
+            }
+        }
+    },
+    en: {
+        translation: {
+            nav: {
+                home: 'HOME',
+                gamesApps: 'GAMES & APPS',
+                studio: 'IINESTUDIO',
+                menuClose: 'Close menu',
+                chooseLang: 'Choose language'
+            },
+            hero: {
+                title: 'Created with Passion.',
+                titleHighlight: 'Experience with Style.',
+                subtitle: 'Improve your daily life with our tools and escape with our games. Simply.',
+                scroll: 'Scroll'
+            },
+            easytrip: {
+                badge: 'New Project',
+                name: 'EasyTrip',
+                slogan: 'Plan, Travel, Share! <br>The companion for all your adventures.',
+                description: 'Design tailor-made itineraries and organize your outings with ease. EasyTrip allows you to plan every step of your trip and coordinate your adventures with your loved ones for an unforgettable shared experience.',
+                features: {
+                    itinerary: { title: 'Itinerary', desc: 'Smart multi-stop.' },
+                    collab: { title: 'Collaborative', desc: 'Organize group outings.' },
+                    sync: { title: 'Sync', desc: 'Access your trips anywhere.' },
+                    social: { title: 'Social', desc: 'Share with the Discord community.' }
+                },
+                learnMore: 'Learn More',
+                stack: 'React | Vite | Firebase | Capacitor'
+            },
+            snake360: {
+                name: 'Snake360',
+                slogan: 'Challenge your perspective.',
+                description: 'Master 360° free rotation and survive in the heart of a boundless circular arena.',
+                bullets: {
+                    rotation: 'Challenge your mind in a new dimension',
+                    customization: 'Dynamic progress: Game modes and evolving levels',
+                    optimized: 'Unique style: Skins and music themes'
+                },
+                playAndroid: 'Play on Android'
+            },
+            portfolio: {
+                interfacePreview: 'Interface Preview'
+            },
+            studio: {
+                name: 'iineStudio',
+                tagline: 'Creative expertise beyond gaming.',
+                description: 'iineGames was born from the technical expertise of iineStudio. <br>From premium video production to events, from interactive installations to 3D motion design, we support brands in their visual communication with tailor-made digital solutions.',
+                services: {
+                    video: 'Video Production',
+                    content: 'Content Creation',
+                    ads: 'Stage & Interactive Installations'
+                }
+            },
+            footer: {
+                rights: '© 2026 iineGames / iineStudio. All rights reserved.'
+            }
+        }
+    },
+    ja: {
+        translation: {
+            nav: {
+                home: 'ホーム',
+                gamesApps: 'ゲーム＆アプリ',
+                studio: 'IINESTUDIO',
+                menuClose: 'メニューを閉じる',
+                chooseLang: '言語を選択'
+            },
+            hero: {
+                title: '情熱から生まれ、',
+                titleHighlight: '洗練された体験を。',
+                subtitle: 'ツールで日常をより良く、ゲームで非日常の楽しみを。',
+                scroll: 'スクロール'
+            },
+            easytrip: {
+                badge: '新プロジェクト',
+                name: 'EasyTrip',
+                slogan: '計画、旅、共有！<br>あらゆる冒険のベストパートナー。',
+                description: '自分だけのルートを設計し、スムーズに旅を計画。家族や友人と冒険を共有し、忘れられない体験を共に。',
+                features: {
+                    itinerary: { title: 'ルート作成', desc: 'スマートな多地点計画' },
+                    collab: { title: '共同編集', desc: '仲間とのグループ計画' },
+                    sync: { title: '同期', desc: 'どこからでも旅にアクセス' },
+                    social: { title: 'ソーシャル', desc: 'Discordコミュニティで共有' }
+                },
+                learnMore: '詳しく見る',
+                stack: 'React | Vite | Firebase | Capacitor'
+            },
+            snake360: {
+                name: 'Snake360',
+                slogan: 'その視点を、極限まで試せ。',
+                description: '360度自由自在な回転をマスターし、終わりなき円形アリーナの核心で生き残れ。',
+                bullets: {
+                    rotation: '新次元で己の精神に挑む',
+                    customization: 'ダイナミックな進化：モードとレベル',
+                    optimized: '唯一無二のスタイル：スキンと楽曲'
+                },
+                playAndroid: 'Androidでプレイ'
+            },
+            portfolio: {
+                interfacePreview: 'インターフェース・プレビュー',
+            },
+            studio: {
+                name: 'iineStudio',
+                tagline: '開発の先にある、創造力の極み。',
+                description: 'iineGamesは、iineStudioの技術的専門知識から誕生しました。<br>高品質なビデオ制作からイベント、インタラクティブなインスタレーションから3Dモーションデザインまで、<br>最高級のデジタルソリューションでブランドの視覚的コミュニケーションをサポートします。',
+                services: {
+                    video: 'ビデオ制作',
+                    content: 'コンテンツ制作',
+                    ads: 'ステージ＆インタラクティブ演出'
+                }
+            },
+            footer: {
+                rights: '© 2026 iineGames / iineStudio. 無断複写・転載を禁じます。'
             }
         }
     }

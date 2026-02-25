@@ -3,10 +3,10 @@
         {
             "id": "easytrip",
             "name": "EasyTrip",
-            "slogan": "Planifiez, roulez, partagez — Le compagnon ultime du Rider.",
-            "description": "Une application hybride conçue pour les passionnés de moto, offrant une planification d'itinéraire intelligente, météo précise et gestion des coûts.",
+            "slogan": "Planifiez, voyagez, partageez ! <br>Le compagnon de toutes vos aventures.",
+            "description": "Concevez des itinéraires sur mesure et organisez vos sorties en toute simplicité. EasyTrip vous permet de planifier chaque étape de votre voyage et de coordonner vos aventures avec vos proches pour une expérience partagée inoubliable.",
             "badge": "Nouveau Projet",
-            "image": "assets/easyTrip/UI/04_Google_Pixel_8A_Phone_Mockup.webp",
+            "image": "assets/easyTrip/UI/EasyTrip_Demo_UI_2.webp",
             "type": "app",
             "features": [
                 {
@@ -15,19 +15,19 @@
                     "desc": "Multi-étapes intelligent."
                 },
                 {
-                    "icon": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M17.5 19c0-3.037-2.463-5.5-5.5-5.5S6.5 15.963 6.5 19'></path><path d='M12 3v3'></path><path d='M12 21v-3'></path><path d='M3 12h3'></path><path d='M21 12h-3'></path><path d='M5.637 5.636l2.121 2.121'></path><path d='M18.364 18.364l-2.121-2.121'></path><path d='M5.636 18.364l2.121-2.121'></path><path d='M18.364 5.636l-2.121 2.121'></path></svg>",
-                    "title": "Météo",
-                    "desc": "Badges dynamiques pass."
+                    "icon": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2'></path><circle cx='9' cy='7' r='4'></circle><path d='M23 21v-2a4 4 0 0 0-3-3.87'></path><path d='M16 3.13a4 4 0 0 1 0 7.75'></path></svg>",
+                    "title": "Collaboratif",
+                    "desc": "Organisez vos sorties à plusieurs."
                 },
                 {
-                    "icon": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 3v18h18'/><path d='M18 17V9'/><path d='M13 17V5'/><path d='M8 17v-3'/></svg>",
-                    "title": "Coûts",
-                    "desc": "Carburant & Péages (ETC)."
+                    "icon": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20.8 14.8A5 5 0 0 0 18 5a5 5 0 1 0-8.8 4.1A3 3 0 0 0 10 15h10a3 3 0 0 0 .8-5.2z'></path></svg>",
+                    "title": "Synchronisation",
+                    "desc": "Retrouvez vos voyages partout."
                 },
                 {
                     "icon": "<svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'></path></svg>",
                     "title": "Social",
-                    "desc": "Sync Discord & Cloud."
+                    "desc": "Partagez avec la communauté Discord."
                 }
             ],
             "links": {
@@ -48,14 +48,14 @@
         {
             "id": "snake360",
             "name": "Snake360",
-            "slogan": "Liberté de mouvement totale sur 360°.",
-            "description": "Une réinvention moderne du classique Snake. Rotation fluide, boutique de skins et performances optimisées pour Android 15+.",
-            "image": "assets/Snake360/snake360_hero.png",
+            "slogan": "Mettez votre perspective à rude épreuve.",
+            "description": "Maîtrisez la rotation libre à 360° et survivez au cœur d'une arène circulaire sans limites.",
+            "image": "assets/Snake360/Demo_UI_2.webp",
             "type": "game",
             "bullets": [
-                "Rotation complète pour une précision accrue",
-                "Personnalisation : Skins, musiques, niveaux",
-                "Optimisé pour Android 15 (SDK 36)"
+                "Défiez votre esprit dans une nouvelle dimension",
+                "Progression dynamique : Modes de jeu et niveaux évolutifs",
+                "Style unique : Skins et thèmes musicaux"
             ],
             "links": {
                 "playstore": "https://play.google.com/store/apps/details?id=com.iinegame.snake360"
@@ -69,7 +69,7 @@
         "services": [
             "Production Vidéo",
             "Création de Contenu",
-            "Optimisation Ads"
+            "Stage & Installations Interactives"
         ]
     }
 }
