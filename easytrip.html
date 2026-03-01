@@ -253,6 +253,65 @@
                 margin: 0 auto 40px;
             }
         }
+
+        /* Beta Section Styles */
+        .beta-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 20px auto 40px;
+            max-width: 600px;
+            text-align: left;
+            backdrop-filter: blur(10px);
+        }
+
+        .beta-title {
+            color: #4CAF50;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .beta-description {
+            font-size: 14px;
+            color: #d1d1d6;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .beta-steps {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .beta-step-item {
+            margin-bottom: 12px;
+        }
+
+        .beta-link {
+            color: #64B5F6;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .beta-link:hover {
+            color: #90CAF9;
+            text-decoration: underline;
+        }
+
+        .beta-note {
+            font-size: 12px;
+            color: #8e8e93;
+            font-style: italic;
+            border-left: 2px solid #4CAF50;
+            padding-left: 10px;
+        }
     </style>
 </head>
 
@@ -320,9 +379,38 @@
                     <h2 class="et-subtitle" data-i18n="easytrip.slogan">Planifiez, voyagez, partagez !</h2>
                     <p class="et-tagline" data-i18n="easytrip.tagline">Le compagnon de toutes vos aventures.</p>
 
+                    <!-- Beta Testing Section -->
+                    <div class="beta-section reveal">
+                        <div class="beta-title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                                </path>
+                            </svg>
+                            <span data-i18n="easytrip.beta.title">Programme de Test Beta</span>
+                        </div>
+                        <p class="beta-description" data-i18n="easytrip.beta.description">Nous finalisons actuellement
+                            les fonctionnalités sociales. L'intégration Discord n'est pas encore disponible mais arrive
+                            très bientôt !</p>
+                        <div class="beta-steps">
+                            <div class="beta-step-item">
+                                <a href="https://groups.google.com/g/easytrip-beta/" target="_blank" class="beta-link"
+                                    data-i18n="easytrip.beta.step1">1️⃣ Rejoignez le groupe de test (un clic)</a>
+                            </div>
+                            <div class="beta-step-item">
+                                <a href="https://play.google.com/apps/testing/com.iinestudio.easytrip" target="_blank"
+                                    class="beta-link" data-i18n="easytrip.beta.step2">2️⃣ Téléchargez l'app sur le Play
+                                    Store</a>
+                            </div>
+                        </div>
+                        <p class="beta-note" data-i18n="easytrip.beta.important">Important : Gardez l'application
+                            installée pendant au moins 14 jours pour que le test soit validé.</p>
+                    </div>
+
                     <div class="download-buttons">
                         <!-- Play Store Button (Official Badge) -->
-                        <a href="https://play.google.com/store/apps/details?id=com.iinestudio.easytrip"
+                        <a href="https://play.google.com/apps/testing/com.iinestudio.easytrip"
                             class="btn-google-play-official" target="_blank">
                             <img src="https://play.google.com/intl/en_us/badges/static/images/badges/fr_badge_web_generic.png"
                                 alt="Disponible sur Google Play" class="play-badge">

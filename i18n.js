@@ -67,7 +67,16 @@ const resources = {
                 availableOn: 'Disponible sur',
                 privacyPolicy: 'Privacy Policy',
                 termsOfUse: 'Terms of Use',
-                stack: 'React | Vite | Firebase | Capacitor'
+                stack: 'React | Vite | Firebase | Capacitor',
+                beta: {
+                    title: 'Programme de Test Beta',
+                    subtitle: 'Aidez-nous à perfectionner l\'expérience EasyTrip.',
+                    description: 'Nous finalisons actuellement les fonctionnalités sociales. L\'intégration Discord n\'est pas encore disponible mais arrive très bientôt !',
+                    helpNeeded: 'Nous avons besoin de testeurs sur Android pendant 14 jours pour valider la version finale.',
+                    step1: '1️⃣ Rejoignez le groupe de test (un clic)',
+                    step2: '2️⃣ Téléchargez l\'app sur le Play Store',
+                    important: 'Important : Gardez l\'application installée pendant au moins 14 jours pour que le test soit validé.'
+                }
             },
 
             // ─── Snake360 Game ───
@@ -139,7 +148,16 @@ const resources = {
                 availableOn: 'Available on',
                 privacyPolicy: 'Privacy Policy',
                 termsOfUse: 'Terms of Use',
-                stack: 'React | Vite | Firebase | Capacitor'
+                stack: 'React | Vite | Firebase | Capacitor',
+                beta: {
+                    title: 'Beta Testing Program',
+                    subtitle: 'Help us perfect the EasyTrip experience.',
+                    description: 'We are currently finalizing social features. Discord integration is not yet available but is coming very soon!',
+                    helpNeeded: 'We need Android testers for 14 days to validate the final version.',
+                    step1: '1️⃣ Join the testing group (one click)',
+                    step2: '2️⃣ Download the app on Play Store',
+                    important: 'Important: Keep the app installed for at least 14 days for the test to be valid.'
+                }
             },
             snake360: {
                 name: 'Snake360',
@@ -203,7 +221,16 @@ const resources = {
                 availableOn: 'で入手可能',
                 privacyPolicy: 'プライバシーポリシー',
                 termsOfUse: '利用規約',
-                stack: 'React | Vite | Firebase | Capacitor'
+                stack: 'React | Vite | Firebase | Capacitor',
+                beta: {
+                    title: 'ベータテストプログラム',
+                    subtitle: 'EasyTripの体験をより完璧なものにするために。',
+                    description: '現在、ソーシャル機能を最終調整中です。Discord連携はまだ利用できませんが、近日公開予定です！',
+                    helpNeeded: '最終バージョンを検証するため、14日間のAndroidテスターを募集しています。',
+                    step1: '1️⃣ テストグループに参加（ワンクリック）',
+                    step2: '2️⃣ Play Storeでアプリをダウンロード',
+                    important: '重要：テストを完了するには、アプリを少なくとも14日間インストールしたままにしてください。'
+                }
             },
             snake360: {
                 name: 'Snake360',
@@ -241,12 +268,23 @@ let i18nReady;
 
 function initI18n() {
     return new Promise((resolve, reject) => {
-        // Récupérer la langue sauvegardée ou utiliser le français par défaut
-        const savedLang = localStorage.getItem('iinegames-lang') || 'fr';
+        // 1. Check for manually saved choice
+        let targetLang = localStorage.getItem('iinegames-lang');
+
+        // 2. If no saved choice, detect browser language
+        if (!targetLang) {
+            const browserLang = navigator.language.split('-')[0]; // get 'fr' from 'fr-FR'
+            if (SUPPORTED_LANGUAGES.includes(browserLang)) {
+                targetLang = browserLang;
+            } else {
+                // 3. Fallback to English (not French) as default for the rest of the world
+                targetLang = 'en';
+            }
+        }
 
         i18next.init({
-            lng: savedLang,
-            fallbackLng: 'fr',
+            lng: targetLang,
+            fallbackLng: 'en',
             supportedLngs: SUPPORTED_LANGUAGES,
             resources: resources,
             interpolation: {
