@@ -80,7 +80,7 @@ const resources = {
                     customization: 'Progression dynamique : Modes de jeu et niveaux évolutifs',
                     optimized: 'Style unique : Skins et thèmes musicaux'
                 },
-                playAndroid: 'Jouer sur Android'
+                playAndroid: 'Bientôt sur Android'
             },
 
             // ─── Portfolio / Showcase ───
@@ -150,7 +150,7 @@ const resources = {
                     customization: 'Dynamic progress: Game modes and evolving levels',
                     optimized: 'Unique style: Skins and music themes'
                 },
-                playAndroid: 'Play on Android'
+                playAndroid: 'Coming Soon on Android'
             },
             portfolio: {
                 interfacePreview: 'Interface Preview'
@@ -214,7 +214,7 @@ const resources = {
                     customization: 'ダイナミックな進化：モードとレベル',
                     optimized: '唯一無二のスタイル：スキンと楽曲'
                 },
-                playAndroid: 'Androidでプレイ'
+                playAndroid: 'Android版 近日公開'
             },
             portfolio: {
                 interfacePreview: 'インターフェース・プレビュー',
